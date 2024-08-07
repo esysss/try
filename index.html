@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acute Stroke Triage Management</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="container mt-5">
+      <!-- Welcome Page -->
+      <div id="welcome-page" class="text-center">
+        <h1>Welcome to Triangle Application <br /></h1>
+        <div id="button">
+          <button id="welcomeToDemo" class="btn btn-outline-info mt-3">
+            Continue
+          </button>
+        </div>
+      </div>
+      <!-- Patient Info Page -->
+      <div id="Demographics-page" style="display: none">
+        <h2>Demographics and Past Medical History</h2>
+        <form id="patient-info-form">
+          <div class="top">
+            <div class="form-group row">
+              <div class="col-3">
+                <label for="age">Age:</label>
+              </div>
+              <div class="col-6">
+                <input
+                  type="number"
+                  id="age"
+                  name="age"
+                  class="form-control"
+                  min="1"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-3">
+                <label>Gender:</label>
+              </div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="gender-male"
+                    value="male"
+                    autocomplete="off"
+                  />
+                  Male
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="gender-female"
+                    value="female"
+                    autocomplete="off"
+                  />
+                  Female
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="gender-other"
+                    value="other"
+                    autocomplete="off"
+                  />
+                  Other
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-3"><label>Myocardial Infarction:</label></div>
+
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Myocardial"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Myocardial"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Myocardial"
+                    id="gender-other"
+                    value="N/A"
+                    autocomplete="off"
+                  />
+                  N/A
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-3"><label>Arrhythmia :</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Arrhythmia"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Arrhythmia"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Arrhythmia"
+                    id="gender-other"
+                    value="N/A"
+                    autocomplete="off"
+                  />
+                  N/A
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-3"><label>Stroke or TIA:</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Stroke"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Stroke"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Stroke"
+                    id="gender-other"
+                    value="N/A"
+                    autocomplete="off"
+                  />
+                  N/A
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-3"><label>HTN:</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="HTN"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="HTN"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="HTN"
+                    id="gender-other"
+                    value="N/A"
+                    autocomplete="off"
+                  />
+                  N/A
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-3"><label>DM:</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="DM"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="DM"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="DM"
+                    id="gender-other"
+                    value="N/A"
+                    autocomplete="off"
+                  />
+                  N/A
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-3"><label>Smoking:</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Smoking"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Smoking"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Smoking"
+                    id="gender-other"
+                    value="N/A"
+                    autocomplete="off"
+                  />
+                  N/A
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-3"><label>Functional Status:</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Functional"
+                    id="gender-male"
+                    value="Independent"
+                    autocomplete="off"
+                  />
+                  Independent
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Functional"
+                    id="gender-female"
+                    value="Partially-Dependent"
+                    autocomplete="off"
+                  />
+                  Partially Dependent
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Functional"
+                    id="gender-other"
+                    value="Caregiver-Dependent"
+                    autocomplete="off"
+                  />
+                  Caregiver Dependent
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-3"><label for="Status">Code Status:</label></div>
+              <div class="col-6">
+                <select id="Status" name="Status" class="form-control">
+                  <option value="Full">Full</option>
+                  <option value="DNR">DNR (Do Not Resuscitate)</option>
+                  <option value="AMM">AMM (Active Medical Managment)</option>
+                  <option value="DNI">DNI (Do Not Intubate)</option>
+                  <option value="TBD">TBD (To Be Determind)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add other patient info fields similarly -->
+        </form>
+        <button type="button" id="demoToSymp" class="btn btn-primary mt-3">
+          Next
+        </button>
+        <button type="button" id="demoTowelcome" class="btn btn-secondary mt-3">
+          Previous
+        </button>
+      </div>
+      <!-- Symptoms and Exam Page -->
+      <div id="symptoms-exam-page" style="display: none">
+        <h2>Symptoms and Exam</h2>
+        <form id="symptoms-exam-form">
+          <div class="top">
+            <div class="form-group row">
+              <div class="col-3"><label for="date-time">Date/Time:</label></div>
+              <div class="col-6">
+                <input
+                  type="datetime-local"
+                  id="date-time"
+                  name="date-time"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-3"><label>Weakness:</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Weakness"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Weakness"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Weakness"
+                    id="gender-other"
+                    value="N/A"
+                    autocomplete="off"
+                  />
+                  N/A
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-3"><label>Side of Weakness:</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Side"
+                    id="gender-male"
+                    value="Right"
+                    autocomplete="off"
+                  />
+                  Right
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Side"
+                    id="gender-female"
+                    value="Left"
+                    autocomplete="off"
+                  />
+                  Left
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Side"
+                    id="gender-other"
+                    value="N/A"
+                    autocomplete="off"
+                  />
+                  N/A
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-3"><label>Aphasia:</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Aphasia"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Aphasia"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Aphasia"
+                    id="gender-other"
+                    value="N/A"
+                    autocomplete="off"
+                  />
+                  N/A
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-3"><label>Facial Drool:</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Facial"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Facial"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Facial"
+                    id="gender-other"
+                    value="N/A"
+                    autocomplete="off"
+                  />
+                  N/A
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-3"><label>Visual Symptoms:</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Visual"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Visual"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Visual"
+                    id="gender-other"
+                    value="N/A"
+                    autocomplete="off"
+                  />
+                  N/A
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-3">
+                <label for="Days">Days Of Symptoms</label>
+              </div>
+              <div class="col-6">
+                <input
+                  type="number"
+                  id="Days"
+                  name="Days"
+                  class="form-control"
+                  min="1"
+                />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-3"><label>Resolution of Symptoms:</label></div>
+              <div
+                class="btn-group btn-group-toggle col-6"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Resolution"
+                    id="gender-male"
+                    value="None"
+                    autocomplete="off"
+                  />
+                  None
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Resolution"
+                    id="gender-female"
+                    value="Partial"
+                    autocomplete="off"
+                  />
+                  Partial
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Resolution"
+                    id="gender-other"
+                    value="Complete"
+                    autocomplete="off"
+                  />
+                  Complete
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Add other symptoms and exam fields similarly -->
+        </form>
+        <button type="button" id="sympToInvest" class="btn btn-primary mt-3">
+          Next
+        </button>
+        <button type="button" id="sympToDemo" class="btn btn-secondary mt-3">
+          Previous
+        </button>
+      </div>
+      <!-- Investigation and Imaging Page -->
+      <div id="investigation-page" style="display: none">
+        <h2>Investigation and Imaging</h2>
+        <form id="investigation-imaging-form">
+          <div class="top">
+            <div class="form-group row">
+              <div class="col-3">
+                <label for="cta-carotid-disease">CTA-Carotid:</label>
+              </div>
+              <div
+                class="btn-group btn-group-toggle col-4"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="CTA"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="CTA"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-3">
+                <label for="cta-carotid-disease">CT-Head:</label>
+              </div>
+              <div
+                class="btn-group btn-group-toggle col-4"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="CT"
+                    id="ct-head-yes"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="CT"
+                    id="ct-head-no"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group row" id="divInfraction">
+              <div class="col-3">
+                <label for="Infraction">Infraction:</label>
+              </div>
+              <div
+                class="btn-group btn-group-toggle col-4"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Infraction"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Infraction"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group row" id="divHemorrhage">
+              <div class="col-3">
+                <label for="Hemorrhage">Hemorrhage:</label>
+              </div>
+              <div
+                class="btn-group btn-group-toggle col-4"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Hemorrhage"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="Hemorrhage"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-3">
+                <label for="cta-carotid-disease"
+                  >ECG Atrial Fibrillation:</label
+                >
+              </div>
+              <div
+                class="btn-group btn-group-toggle col-4"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="ECG"
+                    id="gender-male"
+                    value="Yes"
+                    autocomplete="off"
+                  />
+                  Yes
+                </label>
+                <label class="btn btn-outline-info">
+                  <input
+                    type="radio"
+                    name="ECG"
+                    id="gender-female"
+                    value="No"
+                    autocomplete="off"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Add other investigation and imaging fields similarly -->
+        </form>
+        <button type="button" id="finish-button" class="btn btn-primary mt-3">
+          Finish
+        </button>
+        <button type="button" id="investToSymp" class="btn btn-secondary mt-3">
+          Previous
+        </button>
+      </div>
+      <!-- Summary Page -->
+      <div id="summary-page" style="display: none">
+        <h2>Summary</h2>
+        <div id="summary-content"></div>
+      </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
