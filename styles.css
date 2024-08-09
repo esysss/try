@@ -1,16 +1,88 @@
-#button{
-margin-top: 10%;
+.switch-toggle input {
+    opacity: 0;
+    height: 20px; /* Smaller height */
+    position: absolute;
+    /* border-radius: 15px; */
 }
 
-#welcome-page{
-    margin-top: 10%;
+.switch-toggle input + label {
+    float: left;
+    color: #007bff; /* Bootstrap info color */
+    /* background-color: white; Transparent background */
+    border: 1px solid #007bff; /* Slightly thinner border */
+    padding: 3px 8px; /* Smaller padding */
+    border-radius: 4px;
+    font-size: 1rem; /* Smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.top{
-    padding-top: 5%;
+.switch-toggle input[value="Other"] + label {
+    pointer-events: none;
+    opacity: 0.5;
+    border-color: #c4c4c4; /* Light Grey */
+    color: #6c757d; /* Bootstrap secondary color */
 }
 
-.btn-outline-info{
-    margin-left: 10px;
-    margin-right: 10px;
+.switch-toggle input[value="Other"]:checked + label {
+    background-color: #6c757d; /* Bootstrap secondary background color */
+    color: #fff; /* White text color */
+    border-color: #6c757d;
+}
+
+.switch-toggle input[value="Male"]:checked + label {
+    background-color: #007bff;
+    color: #fff; /* White text color */
+    border-color: #007bff;
+}
+
+.switch-toggle input[value="Female"]:checked + label {
+    background-color: #ff6f61;
+    color: #fff; /* White text color */
+    border-color: #ff6f61;
+}
+
+/* Hover effect for all labels */
+.switch-toggle input + label:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Transparent light blue */
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.switch-toggle input[value="Other"]:hover + label {
+    background-color: rgba(108, 117, 125, 0.1); /* Transparent light grey */
+    color: #6c757d;
+    border-color: #c4c4c4;
+}
+
+.switch-toggle input[value="Male"]:hover + label {
+    background-color: rgba(0, 123, 255, 0.1); /* Transparent light blue */
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.switch-toggle input[value="Female"]:hover + label {
+    background-color: rgba(255, 111, 97, 0.1); /* Transparent light red */
+    color: #ff6f61;
+    border-color: #ff6f61;
+}
+
+
+/* Additional customization if needed */
+.btn-group-toggle .btn {
+    font-size: 1rem; /* Ensure smaller font size */
+    padding: 5px 10px; /* Adjust padding to match the smaller size */
+}
+
+.btn-group-toggle .btn.active,
+.btn-group-toggle .btn:active,
+.btn-group-toggle .btn:focus,
+.btn-group-toggle .btn:hover {
+    color: #fff; /* White text on active/hover */
+    background-color: #17a2b8; /* Bootstrap info color on active/hover */
+    border-color: #17a2b8; /* Match border to background color */
+}
+
+input[type="radio"] {
+    display: none; /* Hide the radio input itself */
 }

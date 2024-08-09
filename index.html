@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Acute Stroke Triage Management</title>
+
+    <!-- Three way button -->
+    <link
+      href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css"
+      rel="stylesheet"
+    />
     <!-- Bootstrap CSS -->
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -20,16 +26,11 @@
     <div id="app" class="container mt-5">
       <!-- Welcome Page -->
       <div id="welcome-page" class="text-center">
-        <h1>Welcome to Triangle Application <br /></h1>
-        <div id="button">
-          <button id="welcomeToDemo" class="btn btn-outline-info mt-3">
-            Continue
-          </button>
-        </div>
+        <h1>Welcome to Triangle Application</h1>
       </div>
       <!-- Patient Info Page -->
-      <div id="Demographics-page" style="display: none">
-        <h2>Demographics and Past Medical History</h2>
+      <div id="Demographics-page" class="container mt-5">
+        <h2 class="container mb-5">Demographics and Past Medical History</h2>
         <form id="patient-info-form">
           <div class="top">
             <div class="form-group row">
@@ -43,6 +44,7 @@
                   name="age"
                   class="form-control"
                   min="1"
+                  max="120"
                 />
               </div>
             </div>
@@ -50,7 +52,29 @@
               <div class="col-3">
                 <label>Gender:</label>
               </div>
+
               <div
+                class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6"
+              >
+                <input id="on" name="Gender" type="radio" value="Male" />
+                <label for="on">Male</label>
+
+                <input
+                  id="na"
+                  name="Gender"
+                  type="radio"
+                  value="na"
+                  checked="checked"
+                />
+                <label for="na">Other</label>
+
+                <input id="off" name="Gender" type="radio" value="Female" />
+                <label for="off">Female</label>
+
+                <a></a>
+              </div>
+
+              <!-- <div
                 class="btn-group btn-group-toggle col-6"
                 data-toggle="buttons"
               >
@@ -84,7 +108,7 @@
                   />
                   Other
                 </label>
-              </div>
+              </div> -->
             </div>
             <div class="form-group row">
               <div class="col-3"><label>Myocardial Infarction:</label></div>
@@ -372,13 +396,10 @@
         <button type="button" id="demoToSymp" class="btn btn-primary mt-3">
           Next
         </button>
-        <button type="button" id="demoTowelcome" class="btn btn-secondary mt-3">
-          Previous
-        </button>
       </div>
       <!-- Symptoms and Exam Page -->
       <div id="symptoms-exam-page" style="display: none">
-        <h2>Symptoms and Exam</h2>
+        <h2 class="container mb-5">Symptoms and Exam</h2>
         <form id="symptoms-exam-form">
           <div class="top">
             <div class="form-group row">
@@ -599,6 +620,7 @@
                   name="Days"
                   class="form-control"
                   min="1"
+                  max="30"
                 />
               </div>
             </div>
@@ -653,7 +675,7 @@
       </div>
       <!-- Investigation and Imaging Page -->
       <div id="investigation-page" style="display: none">
-        <h2>Investigation and Imaging</h2>
+        <h2 class="container mb-5">Investigation and Imaging</h2>
         <form id="investigation-imaging-form">
           <div class="top">
             <div class="form-group row">

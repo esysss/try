@@ -1,11 +1,12 @@
-document.getElementById('welcomeToDemo').addEventListener('click', function () {
-    document.getElementById('welcome-page').style.display = 'none';
-    document.getElementById('Demographics-page').style.display = 'block';
-});
+// document.getElementById('welcomeToDemo').addEventListener('click', function () {
+//     document.getElementById('welcome-page').style.display = 'none';
+//     document.getElementById('Demographics-page').style.display = 'block';
+// });
 
 document.getElementById('demoToSymp').addEventListener('click', function () {
     if (filled(1)) {
         document.getElementById('Demographics-page').style.display = 'none';
+        document.getElementById('welcome-page').style.display = 'none';
         document.getElementById('symptoms-exam-page').style.display = 'block';
 
         var now = new Date();
@@ -23,10 +24,10 @@ document.getElementById('demoToSymp').addEventListener('click', function () {
     }
 });
 
-document.getElementById('demoTowelcome').addEventListener('click', function() {
-    document.getElementById('welcome-page').style.display = 'block';
-    document.getElementById('Demographics-page').style.display = 'none';
-});
+// document.getElementById('demoTowelcome').addEventListener('click', function() {
+//     document.getElementById('welcome-page').style.display = 'block';
+//     document.getElementById('Demographics-page').style.display = 'none';
+// });
 
 document.getElementById('sympToInvest').addEventListener('click', function () {
     if (filled(2)) {
@@ -145,13 +146,13 @@ function filled(formNumber) {
 }
   
 document.getElementById('age').addEventListener('input', function() {
-    if (this.value < 1) {
+    if (this.value < 1 || this.value>120) {
       this.value = '';
     }
 });
   
 document.getElementById('Days').addEventListener('input', function() {
-    if (this.value < 1) {
+    if (this.value < 1 || this.value > 30) {
       this.value = '';
     }
 });
@@ -224,59 +225,59 @@ document.getElementById('finish-button').addEventListener('click', function () {
                 <tr>
                     <th></th>
                     <th></th>
-                    <th></th>
+                   
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Age</td>
                     <td>${demographicsData.age}</td>
-                    <td> </td>
+                    
                 </tr>
                 <tr>
                     <td>Gender</td>
                     <td>${demographicsData.gender}</td>
-                    <td> </td>
+                    
                 </tr>
                 <tr>
                     <td>Myocardial Infarction</td>
                     <td>${demographicsData.Myocardial}</td>
-                    <td> </td>
+                    
                 </tr>
                 <tr>
                     <td>Arrhythmia</td>
                     <td>${demographicsData.Arrhythmia}</td>
-                    <td>${comments['Arrhythmia']}</td>
+                    
                 </tr>
                 <tr>
                     <td>Stroke or TIA</td>
                     <td>${demographicsData.Stroke}</td>
-                    <td> </td>
+                    
                 </tr>
                 <tr>
                     <td>HTN</td>
                     <td>${demographicsData.HTN}</td>
-                    <td> </td>
+                   
                 </tr>
                 <tr>
                     <td>DM</td>
                     <td>${demographicsData.DM}</td>
-                    <td> </td>
+                  
                 </tr>
                 <tr>
                     <td>Smoking</td>
                     <td>${demographicsData.Smoking}</td>
-                    <td> </td>
+                   
                 </tr>
                 <tr>
                     <td>Functional Status</td>
                     <td>${demographicsData.Functional}</td>
-                    <td> </td>
+                  
                 </tr>
                 <tr>
                     <td>Code Status</td>
                     <td>${demographicsData.Status}</td>
-                    <td> </td>
+                 
                 </tr>
             </tbody>
         </table>
@@ -286,49 +287,49 @@ document.getElementById('finish-button').addEventListener('click', function () {
                 <tr>
                     <th></th>
                     <th></th>
-                    <th></th>
+                   
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Date/Time</td>
                     <td>${symptomsData['date-time']}</td>
-                    <td> </td>
+                  
                 </tr>
                 <tr>
                     <td>Weakness</td>
                     <td>${symptomsData.Weakness}</td>
-                    <td>${comments['Weakness']}</td>
+                  
                 </tr>
                 <tr>
                     <td>Side of Weakness</td>
                     <td>${symptomsData.Side}</td>
-                    <td> </td>
+                  
                 </tr>
                 <tr>
                     <td>Aphasia</td>
                     <td>${symptomsData.Aphasia}</td>
-                    <td> </td>
+                   
                 </tr>
                 <tr>
                     <td>Facial Drool</td>
                     <td>${symptomsData.Facial}</td>
-                    <td>${comments['Facial']}</td>
+                  
                 </tr>
                 <tr>
                     <td>Visual Symptoms</td>
                     <td>${symptomsData.Visual}</td>
-                    <td> </td>
+                   
                 </tr>
                 <tr>
                     <td>Days of Symptoms</td>
                     <td>${symptomsData.Days}</td>
-                    <td> </td>
+                   
                 </tr>
                 <tr>
                     <td>Resolution of Symptoms</td>
                     <td>${symptomsData.Resolution}</td>
-                    <td>${comments['Resolution']}</td>
+                  
                 </tr>
             </tbody>
         </table>
@@ -338,37 +339,36 @@ document.getElementById('finish-button').addEventListener('click', function () {
                 <tr>
                     <th></th>
                     <th></th>
-                    <th></th>
+                    
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>CTA-Carotid</td>
                     <td>${investigationData.CTA}</td>
-                    <td></td>
+                    
                 </tr>
                 <tr>
                     <td>CT-Head</td>
                     <td>${investigationData.CT}</td>
-                    <td> </td>
+                    
                 </tr>
                 <tr>
                     <td>Infraction</td>
                     <td>${investigationData.Infraction}</td>
-                    <td> </td>
+                    
                 </tr>
                 <tr>
                     <td>Hemorrhage</td>
                     <td>${investigationData.Hemorrhage}</td>
-                    <td>${comments['Hemorrhage']}</td>
                 </tr>
                 <tr>
                     <td>ECG Atrial Fibrillation</td>
                     <td>${investigationData.ECG}</td>
-                    <td>${comments['ECG']}</td>
                 </tr>
             </tbody>
         </table>
+        <h3>Recommendations</h3>
         <p>${comments['message1']}</p>
         <p>${comments['message2']}</p>
     `;
