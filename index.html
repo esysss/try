@@ -6,19 +6,10 @@
     <title>Acute Stroke Triage Management</title>
 
     <!-- Three way button -->
-    <link
-      href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" rel="stylesheet" />
     <!-- Bootstrap CSS -->
-    <link
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -38,14 +29,7 @@
                 <label for="age">Age:</label>
               </div>
               <div class="col-6">
-                <input
-                  type="number"
-                  id="age"
-                  name="age"
-                  class="form-control"
-                  min="1"
-                  max="120"
-                />
+                <input type="number" id="age" name="age" class="form-control" min="1" max="120" />
               </div>
             </div>
             <div class="form-group row">
@@ -53,328 +37,123 @@
                 <label>Gender:</label>
               </div>
 
-              <div
-                class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6"
-              >
-                <input id="on" name="Gender" type="radio" value="Male" />
-                <label for="on">Male</label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <input id="gender-male" name="gender" type="radio" value="Male" />
+                <label for="gender-male">Male</label>
 
-                <input
-                  id="na"
-                  name="Gender"
-                  type="radio"
-                  value="na"
-                  checked="checked"
-                />
-                <label for="na">Other</label>
+                <input id="gender-other" name="gender" type="radio" value="Other" checked="checked" />
+                <label for="gender-other">Other</label>
 
-                <input id="off" name="Gender" type="radio" value="Female" />
-                <label for="off">Female</label>
+                <input id="gender-female" name="gender" type="radio" value="Female" />
+                <label for="gender-female">Female</label>
 
                 <a></a>
               </div>
-
-              <!-- <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="gender-male"
-                    value="male"
-                    autocomplete="off"
-                  />
-                  Male
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="gender-female"
-                    value="female"
-                    autocomplete="off"
-                  />
-                  Female
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="gender-other"
-                    value="other"
-                    autocomplete="off"
-                  />
-                  Other
-                </label>
-              </div> -->
             </div>
             <div class="form-group row">
               <div class="col-3"><label>Myocardial Infarction:</label></div>
 
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Myocardial"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Myocardial"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Myocardial"
-                    id="gender-other"
-                    value="N/A"
-                    autocomplete="off"
-                  />
-                  N/A
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <input id="myocardial-yes" name="Myocardial" type="radio" value="Yes" />
+                <label for="myocardial-yes">Yes</label>
+
+                <input id="myocardial-na" name="Myocardial" type="radio" value="N/A" checked="checked" />
+                <label for="myocardial-na">N/A</label>
+
+                <input id="myocardial-no" name="Myocardial" type="radio" value="No" />
+                <label for="myocardial-no">No</label>
+
+                <a></a>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-3"><label>Arrhythmia :</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Arrhythmia"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Arrhythmia"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Arrhythmia"
-                    id="gender-other"
-                    value="N/A"
-                    autocomplete="off"
-                  />
-                  N/A
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <input id="arrhythmia-yes" name="Arrhythmia" type="radio" value="Yes" />
+                <label for="arrhythmia-yes">Yes</label>
+
+                <input id="arrhythmia-na" name="Arrhythmia" type="radio" value="N/A" checked="checked" />
+                <label for="arrhythmia-na">N/A</label>
+
+                <input id="arrhythmia-no" name="Arrhythmia" type="radio" value="No" />
+                <label for="arrhythmia-no">No</label>
+
+                <a></a>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-3"><label>Stroke or TIA:</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Stroke"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Stroke"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Stroke"
-                    id="gender-other"
-                    value="N/A"
-                    autocomplete="off"
-                  />
-                  N/A
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <input id="stroke-yes" name="Stroke" type="radio" value="Yes" />
+                <label for="stroke-yes">Yes</label>
+
+                <input id="stroke-na" name="Stroke" type="radio" value="N/A" checked="checked" />
+                <label for="stroke-na">N/A</label>
+
+                <input id="stroke-no" name="Stroke" type="radio" value="No" />
+                <label for="stroke-no">No</label>
+
+                <a></a>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-3"><label>HTN:</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="HTN"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="HTN"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="HTN"
-                    id="gender-other"
-                    value="N/A"
-                    autocomplete="off"
-                  />
-                  N/A
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <input id="htn-yes" name="HTN" type="radio" value="Yes" />
+                <label for="htn-yes">Yes</label>
+
+                <input id="htn-na" name="HTN" type="radio" value="N/A" checked="checked" />
+                <label for="htn-na">N/A</label>
+
+                <input id="htn-no" name="HTN" type="radio" value="No" />
+                <label for="htn-no">No</label>
+
+                <a></a>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-3"><label>DM:</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="DM"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="DM"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="DM"
-                    id="gender-other"
-                    value="N/A"
-                    autocomplete="off"
-                  />
-                  N/A
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <input id="dm-yes" name="DM" type="radio" value="Yes" />
+                <label for="dm-yes">Yes</label>
+
+                <input id="dm-na" name="DM" type="radio" value="N/A" checked="checked" />
+                <label for="dm-na">N/A</label>
+
+                <input id="dm-no" name="DM" type="radio" value="No" />
+                <label for="dm-no">No</label>
+
+                <a></a>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-3"><label>Smoking:</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Smoking"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Smoking"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Smoking"
-                    id="gender-other"
-                    value="N/A"
-                    autocomplete="off"
-                  />
-                  N/A
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <input id="smoking-yes" name="Smoking" type="radio" value="Yes" />
+                <label for="smoking-yes">Yes</label>
+
+                <input id="smoking-na" name="Smoking" type="radio" value="N/A" checked="checked" />
+                <label for="smoking-na">N/A</label>
+
+                <input id="smoking-no" name="Smoking" type="radio" value="No" />
+                <label for="smoking-no">No</label>
+
+                <a></a>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-3"><label>Functional Status:</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Functional"
-                    id="gender-male"
-                    value="Independent"
-                    autocomplete="off"
-                  />
-                  Independent
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Functional"
-                    id="gender-female"
-                    value="Partially-Dependent"
-                    autocomplete="off"
-                  />
-                  Partially Dependent
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Functional"
-                    id="gender-other"
-                    value="Caregiver-Dependent"
-                    autocomplete="off"
-                  />
-                  Caregiver Dependent
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <input id="functional-independent" name="Functional" type="radio" value="Independent" />
+                <label for="functional-independent">Independent</label>
+
+                <input id="functional-partially" name="Functional" type="radio" value="Partially-Dependent" checked="checked" />
+                <label for="functional-partially">Partially Dependent</label>
+
+                <input id="functional-caregiver" name="Functional" type="radio" value="Caregiver-Dependent" />
+                <label for="functional-caregiver">Caregiver Dependent</label>
+
+                <a></a>
               </div>
             </div>
             <div class="form-group row">
@@ -393,9 +172,7 @@
 
           <!-- Add other patient info fields similarly -->
         </form>
-        <button type="button" id="demoToSymp" class="btn btn-primary mt-3">
-          Next
-        </button>
+        <button type="button" id="demoToSymp" class="btn btn-primary mt-3">Next</button>
       </div>
       <!-- Symptoms and Exam Page -->
       <div id="symptoms-exam-page" style="display: none">
@@ -405,207 +182,102 @@
             <div class="form-group row">
               <div class="col-3"><label for="date-time">Date/Time:</label></div>
               <div class="col-6">
-                <input
-                  type="datetime-local"
-                  id="date-time"
-                  name="date-time"
-                  class="form-control"
-                />
+                <input type="datetime-local" id="date-time" name="date-time" class="form-control" />
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-3"><label>Weakness:</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Weakness"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Weakness"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Weakness"
-                    id="gender-other"
-                    value="N/A"
-                    autocomplete="off"
-                  />
-                  N/A
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <!-- First input (Yes) -->
+                <input id="weakness-yes" name="Weakness" type="radio" value="Yes" />
+                <label for="weakness-yes">Yes</label>
+
+                <!-- Second input (N/A) in the middle, checked by default -->
+                <input id="weakness-na" name="Weakness" type="radio" value="N/A" checked="checked" />
+                <label for="weakness-na">N/A</label>
+
+                <!-- Third input (No) -->
+                <input id="weakness-no" name="Weakness" type="radio" value="No" />
+                <label for="weakness-no">No</label>
+
+                <a></a>
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-3"><label>Side of Weakness:</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Side"
-                    id="gender-male"
-                    value="Right"
-                    autocomplete="off"
-                  />
-                  Right
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Side"
-                    id="gender-female"
-                    value="Left"
-                    autocomplete="off"
-                  />
-                  Left
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Side"
-                    id="gender-other"
-                    value="N/A"
-                    autocomplete="off"
-                  />
-                  N/A
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <!-- First input (Left) -->
+                <input id="side-left" name="Side" type="radio" value="Left" />
+                <label for="side-left">Left</label>
+
+                <!-- Second input (N/A) in the middle, checked by default -->
+                <input id="side-na" name="Side" type="radio" value="N/A" checked="checked" />
+                <label for="side-na">N/A</label>
+
+                <!-- Third input (Right) -->
+                <input id="side-right" name="Side" type="radio" value="Right" />
+                <label for="side-right">Right</label>
+
+                <a></a>
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-3"><label>Aphasia:</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Aphasia"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Aphasia"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Aphasia"
-                    id="gender-other"
-                    value="N/A"
-                    autocomplete="off"
-                  />
-                  N/A
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <!-- First input (Yes) -->
+                <input id="aphasia-yes" name="Aphasia" type="radio" value="Yes" />
+                <label for="aphasia-yes">Yes</label>
+
+                <!-- Second input (N/A) in the middle, checked by default -->
+                <input id="aphasia-na" name="Aphasia" type="radio" value="N/A" checked="checked" />
+                <label for="aphasia-na">N/A</label>
+
+                <!-- Third input (No) -->
+                <input id="aphasia-no" name="Aphasia" type="radio" value="No" />
+                <label for="aphasia-no">No</label>
+
+                <a></a>
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-3"><label>Facial Drool:</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Facial"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Facial"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Facial"
-                    id="gender-other"
-                    value="N/A"
-                    autocomplete="off"
-                  />
-                  N/A
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <!-- Third input (Yes) -->
+                <input id="facial-yes" name="Facial" type="radio" value="Yes" />
+                <label for="facial-yes">Yes</label>
+
+                <!-- Second input (N/A) in the middle, checked by default -->
+                <input id="facial-na" name="Facial" type="radio" value="N/A" checked="checked" />
+                <label for="facial-na">N/A</label>
+
+                <!-- First input (No) -->
+                <input id="facial-no" name="Facial" type="radio" value="No" />
+                <label for="facial-no">No</label>
+
+                <a></a>
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-3"><label>Visual Symptoms:</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Visual"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Visual"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Visual"
-                    id="gender-other"
-                    value="N/A"
-                    autocomplete="off"
-                  />
-                  N/A
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <!-- Third input (Yes) -->
+                <input id="visual-yes" name="Visual" type="radio" value="Yes" />
+                <label for="visual-yes">Yes</label>
+
+                <!-- Second input (N/A) in the middle, checked by default -->
+                <input id="visual-na" name="Visual" type="radio" value="N/A" checked="checked" />
+                <label for="visual-na">N/A</label>
+
+                <!-- First input (No) -->
+                <input id="visual-no" name="Visual" type="radio" value="No" />
+                <label for="visual-no">No</label>
+
+                <a></a>
               </div>
             </div>
 
@@ -614,64 +286,33 @@
                 <label for="Days">Days Of Symptoms</label>
               </div>
               <div class="col-6">
-                <input
-                  type="number"
-                  id="Days"
-                  name="Days"
-                  class="form-control"
-                  min="1"
-                  max="30"
-                />
+                <input type="number" id="Days" name="Days" class="form-control" min="1" max="30" />
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-3"><label>Resolution of Symptoms:</label></div>
-              <div
-                class="btn-group btn-group-toggle col-6"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Resolution"
-                    id="gender-male"
-                    value="None"
-                    autocomplete="off"
-                  />
-                  None
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Resolution"
-                    id="gender-female"
-                    value="Partial"
-                    autocomplete="off"
-                  />
-                  Partial
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Resolution"
-                    id="gender-other"
-                    value="Complete"
-                    autocomplete="off"
-                  />
-                  Complete
-                </label>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <!-- First input (None) -->
+                <input id="resolution-none" name="Resolution" type="radio" value="None" checked="checked" />
+                <label for="resolution-none">None</label>
+
+                <!-- Second input (Partial) in the middle -->
+                <input id="resolution-partial" name="Resolution" type="radio" value="Partial" />
+                <label for="resolution-partial">Partial</label>
+
+                <!-- Third input (Complete) -->
+                <input id="resolution-complete" name="Resolution" type="radio" value="Complete" />
+                <label for="resolution-complete">Complete</label>
+
+                <a></a>
               </div>
             </div>
           </div>
           <!-- Add other symptoms and exam fields similarly -->
         </form>
-        <button type="button" id="sympToInvest" class="btn btn-primary mt-3">
-          Next
-        </button>
-        <button type="button" id="sympToDemo" class="btn btn-secondary mt-3">
-          Previous
-        </button>
+        <button type="button" id="sympToInvest" class="btn btn-primary mt-3">Next</button>
+        <button type="button" id="sympToDemo" class="btn btn-secondary mt-3">Previous</button>
       </div>
       <!-- Investigation and Imaging Page -->
       <div id="investigation-page" style="display: none">
@@ -682,30 +323,17 @@
               <div class="col-3">
                 <label for="cta-carotid-disease">CTA-Carotid:</label>
               </div>
-              <div
-                class="btn-group btn-group-toggle col-4"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="CTA"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="CTA"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
+
+              <div class="col-4">
+                <div class="switch-toggle switch-candy switch-block">
+                  <input id="cta-yes" name="CTA" type="radio" value="Yes" checked />
+                  <label for="cta-yes" onclick="">Yes</label>
+
+                  <input id="cta-no" name="CTA" type="radio" value="No" />
+                  <label for="cta-no" onclick="">No</label>
+
+                  <a></a>
+                </div>
               </div>
             </div>
 
@@ -713,30 +341,16 @@
               <div class="col-3">
                 <label for="cta-carotid-disease">CT-Head:</label>
               </div>
-              <div
-                class="btn-group btn-group-toggle col-4"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="CT"
-                    id="ct-head-yes"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="CT"
-                    id="ct-head-no"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
+              <div class="col-4">
+                <div class="switch-toggle switch-candy switch-block">
+                  <input id="ct-head-yes" name="CT" type="radio" value="Yes" checked />
+                  <label for="ct-head-yes" onclick="">Yes</label>
+
+                  <input id="ct-head-no" name="CT" type="radio" value="No" />
+                  <label for="ct-head-no" onclick="">No</label>
+
+                  <a></a>
+                </div>
               </div>
             </div>
 
@@ -744,30 +358,16 @@
               <div class="col-3">
                 <label for="Infraction">Infraction:</label>
               </div>
-              <div
-                class="btn-group btn-group-toggle col-4"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Infraction"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Infraction"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
+              <div class="col-4">
+                <div class="switch-toggle switch-candy switch-block">
+                  <input id="infraction-yes" name="Infraction" type="radio" value="Yes" checked />
+                  <label for="infraction-yes" onclick="">Yes</label>
+
+                  <input id="infraction-no" name="Infraction" type="radio" value="No" />
+                  <label for="infraction-no" onclick="">No</label>
+
+                  <a></a>
+                </div>
               </div>
             </div>
 
@@ -775,74 +375,40 @@
               <div class="col-3">
                 <label for="Hemorrhage">Hemorrhage:</label>
               </div>
-              <div
-                class="btn-group btn-group-toggle col-4"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Hemorrhage"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="Hemorrhage"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
+              <div class="col-4">
+                <div class="switch-toggle switch-candy switch-block">
+                  <input id="hemorrhage-yes" name="Hemorrhage" type="radio" value="Yes" checked />
+                  <label for="hemorrhage-yes" onclick="">Yes</label>
+
+                  <input id="hemorrhage-no" name="Hemorrhage" type="radio" value="No" />
+                  <label for="hemorrhage-no" onclick="">No</label>
+
+                  <a></a>
+                </div>
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-3">
-                <label for="cta-carotid-disease"
-                  >ECG Atrial Fibrillation:</label
-                >
+                <label for="cta-carotid-disease">ECG Atrial Fibrillation:</label>
               </div>
-              <div
-                class="btn-group btn-group-toggle col-4"
-                data-toggle="buttons"
-              >
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="ECG"
-                    id="gender-male"
-                    value="Yes"
-                    autocomplete="off"
-                  />
-                  Yes
-                </label>
-                <label class="btn btn-outline-info">
-                  <input
-                    type="radio"
-                    name="ECG"
-                    id="gender-female"
-                    value="No"
-                    autocomplete="off"
-                  />
-                  No
-                </label>
+              <div class="col-4">
+                <div class="switch-toggle switch-candy switch-block">
+                  <input id="ecg-yes" name="ECG" type="radio" value="Yes" checked />
+                  <label for="ecg-yes" onclick="">Yes</label>
+
+                  <input id="ecg-no" name="ECG" type="radio" value="No" />
+                  <label for="ecg-no" onclick="">No</label>
+
+                  <a></a>
+                </div>
               </div>
             </div>
           </div>
           <!-- Add other investigation and imaging fields similarly -->
         </form>
-        <button type="button" id="finish-button" class="btn btn-primary mt-3">
-          Finish
-        </button>
-        <button type="button" id="investToSymp" class="btn btn-secondary mt-3">
-          Previous
-        </button>
+        <button type="button" id="finish-button" class="btn btn-primary mt-3">Finish</button>
+        <button type="button" id="investToSymp" class="btn btn-secondary mt-3">Previous</button>
       </div>
       <!-- Summary Page -->
       <div id="summary-page" style="display: none">

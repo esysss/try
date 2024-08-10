@@ -1,88 +1,86 @@
-.switch-toggle input {
-    opacity: 0;
-    height: 20px; /* Smaller height */
-    position: absolute;
-    /* border-radius: 15px; */
+.switch-toggle.switch-candy, .switch-light.switch-candy > span {
+  background-color: #5788d9;
 }
 
-.switch-toggle input + label {
-    float: left;
-    color: #007bff; /* Bootstrap info color */
-    /* background-color: white; Transparent background */
-    border: 1px solid #007bff; /* Slightly thinner border */
-    padding: 3px 8px; /* Smaller padding */
-    border-radius: 4px;
-    font-size: 1rem; /* Smaller font size */
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
+/* Gender */
 
-.switch-toggle input[value="Other"] + label {
+.switch-toggle input[value="Other"] {
     pointer-events: none;
     opacity: 0.5;
-    border-color: #c4c4c4; /* Light Grey */
+    border-color: #ffffff; /* Light Grey */
     color: #6c757d; /* Bootstrap secondary color */
 }
 
-.switch-toggle input[value="Other"]:checked + label {
+.switch-toggle input[value="Other"]:checked {
     background-color: #6c757d; /* Bootstrap secondary background color */
     color: #fff; /* White text color */
     border-color: #6c757d;
 }
 
-.switch-toggle input[value="Male"]:checked + label {
-    background-color: #007bff;
+.switch-toggle input[value="Male"]:checked  {
+    background-color: #7091e6;
     color: #fff; /* White text color */
-    border-color: #007bff;
+    border-color: white;
 }
 
-.switch-toggle input[value="Female"]:checked + label {
-    background-color: #ff6f61;
+.switch-toggle input[value="Female"]:checked {
+    background-color: #7091e6;
     color: #fff; /* White text color */
-    border-color: #ff6f61;
+    border-color: white;
 }
 
 /* Hover effect for all labels */
 .switch-toggle input + label:hover {
-    background-color: rgba(0, 123, 255, 0.1); /* Transparent light blue */
-    color: #007bff;
-    border-color: #007bff;
+    background-color: rgba(0, 0, 0, 0.445); /* Transparent light blue */
+    /* color: #7091e6; */
+    border-color: white;
 }
 
-.switch-toggle input[value="Other"]:hover + label {
+
+/* Yes and No */
+
+.switch-toggle input[value="Yes"]:checked+label {
+    background-color: green;
+    color: #fff; /* White text color */
+    border-color: white;
+}
+
+.switch-toggle input[value="No"]:checked+label {
+    background-color: red;
+    color: #fff; /* White text color */
+    border-color: white;
+}
+
+.switch-toggle input[value="N/A"]:checked+label {
+  background-color: rgb(134, 133, 133);
+  color: #fff; /* White text color */
+  border-color: white;
+}
+
+/* Hover effect for all labels */
+
+.switch-toggle input[value="N/A"]:hover{
     background-color: rgba(108, 117, 125, 0.1); /* Transparent light grey */
     color: #6c757d;
-    border-color: #c4c4c4;
+    border-color: white;
 }
 
-.switch-toggle input[value="Male"]:hover + label {
+.switch-toggle input[value="Yes"]:hover {
     background-color: rgba(0, 123, 255, 0.1); /* Transparent light blue */
-    color: #007bff;
-    border-color: #007bff;
+    color: #7091e6;
+    border-color: white;
 }
 
-.switch-toggle input[value="Female"]:hover + label {
+.switch-toggle input[value="No"]:hover {
     background-color: rgba(255, 111, 97, 0.1); /* Transparent light red */
-    color: #ff6f61;
-    border-color: #ff6f61;
+    color: #7091e6;
+    border-color: white;
 }
 
-
-/* Additional customization if needed */
-.btn-group-toggle .btn {
-    font-size: 1rem; /* Ensure smaller font size */
-    padding: 5px 10px; /* Adjust padding to match the smaller size */
-}
-
-.btn-group-toggle .btn.active,
-.btn-group-toggle .btn:active,
-.btn-group-toggle .btn:focus,
-.btn-group-toggle .btn:hover {
-    color: #fff; /* White text on active/hover */
-    background-color: #17a2b8; /* Bootstrap info color on active/hover */
-    border-color: #17a2b8; /* Match border to background color */
-}
-
-input[type="radio"] {
-    display: none; /* Hide the radio input itself */
-}
+/* .switch-light.switch-candy span span, .switch-light.switch-candy input:checked ~ span span:first-child, .switch-toggle.switch-candy label {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  /* background-color: red; 
+  text-shadow: 1px 1px 1px #191b1e;
+/* } */ 
