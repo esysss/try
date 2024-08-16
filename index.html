@@ -82,7 +82,7 @@
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-3"><label>Stroke or TIA:</label></div>
+              <div class="col-3"><label>History of Stroke or TIA:</label></div>
               <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
                 <input id="stroke-yes" name="Stroke" type="radio" value="Yes" />
                 <label for="stroke-yes">Yes</label>
@@ -180,7 +180,7 @@
         <form id="symptoms-exam-form">
           <div class="top">
             <div class="form-group row">
-              <div class="col-3"><label for="date-time">Date/Time:</label></div>
+              <div class="col-3"><label for="date-time">Onset of Symptoms:</label></div>
               <div class="col-6">
                 <input type="datetime-local" id="date-time" name="date-time" class="form-control" />
               </div>
@@ -244,7 +244,7 @@
             </div>
 
             <div class="form-group row">
-              <div class="col-3"><label>Facial Drool:</label></div>
+              <div class="col-3"><label>Facial Droop:</label></div>
               <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
                 <!-- Third input (Yes) -->
                 <input id="facial-yes" name="Facial" type="radio" value="Yes" />
@@ -283,10 +283,10 @@
 
             <div class="form-group row">
               <div class="col-3">
-                <label for="Days">Days Of Symptoms</label>
+                <label for="Days">Duration of Symptoms</label>
               </div>
               <div class="col-6">
-                <input type="number" id="Days" name="Days" class="form-control" min="1" max="30" />
+                <input type="number" id="Days" name="Days" class="form-control" min="1" max="30" placeholder="Enter number of days"/>
               </div>
             </div>
 
@@ -339,7 +339,7 @@
 
             <div class="form-group row">
               <div class="col-3">
-                <label for="cta-carotid-disease">CT-Head:</label>
+                <label for="cta-carotid-disease">CT or MRI head:</label>
               </div>
               <div class="col-4">
                 <div class="switch-toggle switch-candy switch-block">
@@ -371,6 +371,28 @@
               </div>
             </div>
 
+            <div class="form-group row">
+              <div class="col-3">
+                <label>Side of Infarction:</label>
+              </div>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <!-- Third input (Right) -->
+                <input id="infarction-right" name="Infarction_Side" type="radio" value="Right" />
+                <label for="infarction-right">Right</label>
+            
+                <!-- Second input (Left) in the middle, checked by default -->
+                <input id="infarction-left" name="Infarction_Side" type="radio" value="Left" checked="checked" />
+                <label for="infarction-left">Left</label>
+            
+                <!-- First input (Bilateral) -->
+                <input id="infarction-bilateral" name="Infarction_Side" type="radio" value="Bilateral" />
+                <label for="infarction-bilateral">Bilateral</label>
+            
+                <a></a>
+              </div>
+            </div>
+            
+
             <div class="form-group row" id="divHemorrhage">
               <div class="col-3">
                 <label for="Hemorrhage">Hemorrhage:</label>
@@ -390,6 +412,28 @@
 
             <div class="form-group row">
               <div class="col-3">
+                <label>Side of Hemorrhage:</label>
+              </div>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <!-- Third input (Right) -->
+                <input id="hemorrhage-right" name="Hemorrhage_Side" type="radio" value="Right" />
+                <label for="hemorrhage-right">Right</label>
+            
+                <!-- Second input (Left) in the middle, checked by default -->
+                <input id="hemorrhage-left" name="Hemorrhage_Side" type="radio" value="Left" checked="checked" />
+                <label for="hemorrhage-left">Left</label>
+            
+                <!-- First input (Bilateral) -->
+                <input id="hemorrhage-bilateral" name="Hemorrhage_Side" type="radio" value="Bilateral" />
+                <label for="hemorrhage-bilateral">Bilateral</label>
+            
+                <a></a>
+              </div>
+            </div>
+            
+
+            <div class="form-group row">
+              <div class="col-3">
                 <label for="cta-carotid-disease">ECG Atrial Fibrillation:</label>
               </div>
               <div class="col-4">
@@ -404,6 +448,64 @@
                 </div>
               </div>
             </div>
+
+            <div class="form-group row">
+              <div class="col-3">
+                <label for="duplex-carotid">Duplex Carotid:</label>
+              </div>
+              <div class="col-4">
+                <div class="switch-toggle switch-candy switch-block">
+                  <input id="duplex-yes" name="Duplex_Carotid" type="radio" value="Yes" checked />
+                  <label for="duplex-yes" onclick="">Yes</label>
+            
+                  <input id="duplex-no" name="Duplex_Carotid" type="radio" value="No" />
+                  <label for="duplex-no" onclick="">No</label>
+            
+                  <a></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-3">
+                <label for="stenosis-ica">Greater than 50% stenosis of Internal Carotid Artery:</label>
+              </div>
+              <div class="col-4">
+                <div class="switch-toggle switch-candy switch-block">
+                  <input id="stenosis-yes" name="Stenosis_ICA" type="radio" value="Yes" checked />
+                  <label for="stenosis-yes" onclick="">Yes</label>
+            
+                  <input id="stenosis-no" name="Stenosis_ICA" type="radio" value="No" />
+                  <label for="stenosis-no" onclick="">No</label>
+            
+                  <a></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-3">
+                <label>Side of Carotid Stenosis:</label>
+              </div>
+              <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">
+                <!-- Third input (Right) -->
+                <input id="stenosis-right" name="Carotid_Stenosis_Side" type="radio" value="Right" />
+                <label for="stenosis-right">Right</label>
+            
+                <!-- Second input (Left) in the middle, checked by default -->
+                <input id="stenosis-left" name="Carotid_Stenosis_Side" type="radio" value="Left" checked="checked" />
+                <label for="stenosis-left">Left</label>
+            
+                <!-- First input (Bilateral) -->
+                <input id="stenosis-bilateral" name="Carotid_Stenosis_Side" type="radio" value="Bilateral" />
+                <label for="stenosis-bilateral">Bilateral</label>
+            
+                <a></a>
+              </div>
+            </div>
+            
+
+            
           </div>
           <!-- Add other investigation and imaging fields similarly -->
         </form>
