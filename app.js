@@ -1,7 +1,14 @@
-// document.getElementById('welcomeToDemo').addEventListener('click', function () {
-//     document.getElementById('welcome-page').style.display = 'none';
-//     document.getElementById('Demographics-page').style.display = 'block';
-// });
+// this is just a peace of code to fix the last part of the code:
+// document.getElementById('Demographics-page').style.display = 'none';
+// document.getElementById('welcome-page').style.display = 'none';
+// document.getElementById('symptoms-exam-page').style.display = 'none';
+// document.getElementById('investigation-page').style.display = 'block';
+
+
+
+
+
+// until here
 
 document.getElementById('demoToSymp').addEventListener('click', function () {
     if (filled(1)) {
@@ -51,6 +58,20 @@ document.getElementById('investToSymp').addEventListener('click', function() {
 document.getElementById('ct-head-no').addEventListener('click', function() {
         document.getElementById('divInfraction').style.display = 'none';
         document.getElementById('divHemorrhage').style.display = 'none';
+        document.getElementById('div-hemmorrhage-side').style.display = 'none';
+        document.getElementById('div-infraction-side').style.display = 'none';
+});
+
+document.getElementById('infraction-no').addEventListener('click', function() {
+    document.getElementById('div-infraction-side').style.display = 'none';
+});
+
+document.getElementById('hemorrhage-no').addEventListener('click', function() {
+    document.getElementById('div-hemmorrhage-side').style.display = 'none';
+});
+
+document.getElementById('cta-no').addEventListener('click', function() {
+    document.getElementById('div-carotid-side').style.display = 'none';
 });
 
 function getInfo(path) {
