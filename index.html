@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Acute Stroke Triage Management</title>
+    <link rel="icon" type="image/x-icon" href="/Sources/fav.png">
 
     <!-- Three way button -->
     <link href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" rel="stylesheet" />
@@ -14,7 +15,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="app" class="container mt-5">
+    <div id="app" class="container mt-5 mb-5">
       <!-- Welcome Page -->
       <div id="welcome-page" class="text-center">
         <h1>Welcome to Triangle Application</h1>
@@ -96,6 +97,15 @@
                 <a></a>
               </div>
             </div>
+
+            <div class="form-group row" id="stroke-date" style="display: none">
+              <div class="col-3"><label for="date-time">Date Of Stroke:</label></div>
+              <div class="col-6">
+                <input type="datetime-local" id="date-stroke" name="date-stroke" class="form-control" />
+              </div>
+            </div>
+
+
             <div class="form-group row">
               <div class="col-3"><label>HTN:</label></div>
               <div class="switch-toggle switch-3 switch-candy btn-group btn-group-toggle col-6">

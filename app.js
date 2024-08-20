@@ -4,12 +4,6 @@
 // document.getElementById('symptoms-exam-page').style.display = 'none';
 // document.getElementById('investigation-page').style.display = 'block';
 
-
-
-
-
-// until here
-
 document.getElementById('demoToSymp').addEventListener('click', function () {
     if (filled(1)) {
         document.getElementById('Demographics-page').style.display = 'none';
@@ -55,23 +49,54 @@ document.getElementById('investToSymp').addEventListener('click', function() {
     document.getElementById('investigation-page').style.display = 'none';
 });
 
-document.getElementById('ct-head-no').addEventListener('click', function() {
-        document.getElementById('divInfraction').style.display = 'none';
-        document.getElementById('divHemorrhage').style.display = 'none';
-        document.getElementById('div-hemmorrhage-side').style.display = 'none';
-        document.getElementById('div-infraction-side').style.display = 'none';
+// CT or MRI head
+document.getElementById('ct-head-yes').addEventListener('click', function() {
+        document.getElementById('divInfraction').style.removeProperty("display");
+        document.getElementById('divHemorrhage').style.removeProperty("display");
+        document.getElementById('div-hemmorrhage-side').style.removeProperty("display");
+        document.getElementById('div-infraction-side').style.removeProperty("display");
 });
-
-document.getElementById('infraction-no').addEventListener('click', function() {
+document.getElementById('ct-head-no').addEventListener('click', function() {
+    document.getElementById('divInfraction').style.display = 'none';
+    document.getElementById('divHemorrhage').style.display = 'none';
+    document.getElementById('div-hemmorrhage-side').style.display = 'none';
     document.getElementById('div-infraction-side').style.display = 'none';
 });
 
+// Infraction
+document.getElementById('infraction-no').addEventListener('click', function() {
+    document.getElementById('div-infraction-side').style.display = 'none';
+});
+document.getElementById('infraction-yes').addEventListener('click', function() {
+    document.getElementById('div-infraction-side').style.removeProperty("display");
+});
+
+// Hemorrhage
 document.getElementById('hemorrhage-no').addEventListener('click', function() {
     document.getElementById('div-hemmorrhage-side').style.display = 'none';
 });
+document.getElementById('hemorrhage-yes').addEventListener('click', function() {
+    document.getElementById('div-hemmorrhage-side').style.removeProperty("display");
+});
 
+//CTA-Carotid
 document.getElementById('cta-no').addEventListener('click', function() {
     document.getElementById('div-carotid-side').style.display = 'none';
+});
+document.getElementById('cta-yes').addEventListener('click', function() {
+    document.getElementById('div-carotid-side').style.removeProperty("display");
+});
+
+// Stroke switch
+document.getElementById('stroke-yes').addEventListener('click', function() {
+    document.getElementById('stroke-date').style.display = 'block';
+    document.getElementById('stroke-date').style.removeProperty("display");
+});
+document.getElementById('stroke-na').addEventListener('click', function() {
+    document.getElementById('stroke-date').style.display = 'none';
+});
+document.getElementById('stroke-no').addEventListener('click', function() {
+    document.getElementById('stroke-date').style.display = 'none';
 });
 
 function getInfo(path) {
@@ -102,7 +127,7 @@ function getInfo(path) {
 function filled(formNumber) {
     if (formNumber === 1) {
         temp = getInfo("patient-info-form");
-        if (Object.keys(temp).length != 10 || temp['age'] == '') {
+        if (Object.keys(temp).length != 11 || temp['age'] == '') {
             return false;
         }
     } else if (formNumber === 2) {
@@ -134,59 +159,72 @@ document.getElementById('finish-button').addEventListener('click', function () {
     symptomsData = getInfo("symptoms-exam-form");
     investigationData = getInfo("investigation-imaging-form");
 
-    comments = {}
+    comments = {};
+    prioList = [];
 
     // We add the rules here
     comments['Resolution'] = "";
     if (symptomsData['Resolution'] == 'None') {
-        comments['Resolution'] = "Neurology consult is mandated";
+        comments['Resolution'] = "Neurology consult is required";
+        prioList.push("Neurology");
     }
 
     comments['Hemorrhage'] = "";
     if (investigationData['Hemorrhage']=="Yes") {
-        comments['Hemorrhage'] = "Neurology consult is required as priority 1";
+        comments['Hemorrhage'] = "Neurology consult is required";
+        prioList.push("Neurology");
     }
 
     comments['Arrhythmia'] = "";
     if (demographicsData['Arrhythmia']=="Yes") {
         comments['Arrhythmia'] = "Cardiology consult is required";
+        prioList.push("Cardiology");
     }
 
     comments['Weakness'] = "";
     if (symptomsData['Weakness']=="Yes") {
         comments['Weakness'] = "Vascular surgery consult is required";
+        prioList.push("Vascular");
     }
 
     comments['Facial'] = "";
     if (symptomsData['Facial']=="Yes") {
         comments['Facial'] = "Vascular surgery consult is required";
+        prioList.push("Vascular");
     }
 
     comments['CTA'] = "";
     if (investigationData['CTA']=="Yes") {
         comments['CTA'] = "Vascular surgery consult is required";
+        prioList.push("Vascular");
     }
 
     comments['ECG'] = "";
     if (investigationData['ECG']=="Yes") {
         comments['ECG'] = "Cardiology surgery consult is required";
+        prioList.push("Cardiology");
     }
 
     comments['message1'] = "";
     if (investigationData['CTA'] == "Yes" && investigationData['Infraction'] == "Yes" && investigationData['ECG'] == "Yes") { 
         comments['message1'] = "(CTA-Carotid & Infraction & ECG Atrial Fibrillation) -> Vascular surgery consult is required";
+        prioList.push("Vascular");
     }
 
     comments['message2'] = "";
     if (investigationData['CTA'] == "Yes" && investigationData['ECG'] == "Yes") { 
         comments['message2'] = "(CTA-Carotid & ECG Atrial Fibrillation) -> Vascular surgery consult is required";
+        prioList.push("Vascular");
     }
 
     comments['message3'] = "";
     if (investigationData['Infraction'] == "Yes" && investigationData['ECG'] == "Yes") { 
         comments['message3'] = "(Infraction & ECG Atrial Fibrillation) -> Cardiology consult is required";
+        prioList.push("Cardiology");
     }
 
+
+    prioComment = commenting(prioList);
     
     
     const summaryContent = `
@@ -221,8 +259,13 @@ document.getElementById('finish-button').addEventListener('click', function () {
                     
                 </tr>
                 <tr>
-                    <td>Stroke or TIA</td>
+                    <td>History of Stroke or TIA</td>
                     <td>${demographicsData.Stroke}</td>
+                    
+                </tr>
+                <tr>
+                    <td>Date Of Stroke</td>
+                    <td>${demographicsData["date-stroke"]}</td>
                     
                 </tr>
                 <tr>
@@ -263,7 +306,7 @@ document.getElementById('finish-button').addEventListener('click', function () {
             </thead>
             <tbody>
                 <tr>
-                    <td>Date/Time</td>
+                    <td>Onset of Symptoms</td>
                     <td>${symptomsData['date-time']}</td>
                   
                 </tr>
@@ -283,7 +326,7 @@ document.getElementById('finish-button').addEventListener('click', function () {
                    
                 </tr>
                 <tr>
-                    <td>Facial Drool</td>
+                    <td>Facial Droop</td>
                     <td>${symptomsData.Facial}</td>
                   
                 </tr>
@@ -293,8 +336,8 @@ document.getElementById('finish-button').addEventListener('click', function () {
                    
                 </tr>
                 <tr>
-                    <td>Days of Symptoms</td>
-                    <td>${symptomsData.Days}</td>
+                    <td>Duration of Symptoms</td>
+                    <td>${symptomsData.Days} Days</td>
                    
                 </tr>
                 <tr>
@@ -320,6 +363,11 @@ document.getElementById('finish-button').addEventListener('click', function () {
                     
                 </tr>
                 <tr>
+                    <td>Side of Carotid Stenosis</td>
+                    <td>${investigationData.Carotid_Stenosis_Side}</td>
+                    
+                </tr>
+                <tr>
                     <td>CT-Head</td>
                     <td>${investigationData.CT}</td>
                     
@@ -330,8 +378,17 @@ document.getElementById('finish-button').addEventListener('click', function () {
                     
                 </tr>
                 <tr>
+                    <td>Side of Infarction</td>
+                    <td>${investigationData.Infarction_Side}</td>
+                    
+                </tr>
+                <tr>
                     <td>Hemorrhage</td>
                     <td>${investigationData.Hemorrhage}</td>
+                </tr>
+                <tr>
+                    <td>Side of Hemorrhage</td>
+                    <td>${investigationData.Hemorrhage_Side}</td>
                 </tr>
                 <tr>
                     <td>ECG Atrial Fibrillation</td>
@@ -340,8 +397,9 @@ document.getElementById('finish-button').addEventListener('click', function () {
             </tbody>
         </table>
         <h3>Recommendations</h3>
-        <p>${comments['message1']}</p>
-        <p>${comments['message2']}</p>
+        <p>Priority 1 : ${prioComment[1]}</p>
+        <p>Priority 2 : ${prioComment[2]}</p>
+        <p>Priority 3 : ${prioComment[3]}</p>
     `;
 
     document.getElementById('summary-content').innerHTML = summaryContent;
@@ -351,3 +409,23 @@ document.getElementById('finish-button').addEventListener('click', function () {
 
     // Additional processing and triage logic here
 });
+
+function commenting(list){
+    counter = 1;
+    prioComment = {1:'N/A',2:'N/A',3:'N/A'};
+
+    if(list.includes("Neurology")){
+        prioComment[counter] = "Neurology consult is required";
+        counter++;
+    }
+
+    if(list.includes("Vascular")){
+        prioComment[counter] = "Vascular consult is required";
+        counter++;
+    }
+
+    if(list.includes("Cardiology")){
+        prioComment[counter] = "Cardiology consult is required";
+    }
+    return prioComment
+}
