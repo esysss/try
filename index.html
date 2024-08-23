@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Acute Stroke Triage Management</title>
-    <link rel="icon" type="image/x-icon" href="/Sources/fav.png">
+    <link rel="icon" type="image/x-icon" href="/Sources/fav.png" />
 
     <!-- Three way button -->
     <link href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" rel="stylesheet" />
@@ -104,7 +104,6 @@
                 <input type="datetime-local" id="date-stroke" name="date-stroke" class="form-control" />
               </div>
             </div>
-
 
             <div class="form-group row">
               <div class="col-3"><label>HTN:</label></div>
@@ -296,7 +295,17 @@
                 <label for="Days">Duration of Symptoms</label>
               </div>
               <div class="col-6">
-                <input type="number" id="Days" name="Days" class="form-control" min="1" max="30" placeholder="Enter number of days"/>
+                <div class="row">
+                  <div class="col-4">
+                    <input type="number" id="Days" name="Days" class="form-control" min="0" max="30" placeholder="Days" />
+                  </div>
+                  <div class="col-4">
+                    <input type="number" id="Hours" name="Hours" class="form-control" min="0" max="23" placeholder="Hours" />
+                  </div>
+                  <div class="col-4">
+                    <input type="number" id="Minutes" name="Minutes" class="form-control" min="0" max="59" placeholder="Minutes" />
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -379,7 +388,7 @@
                   <a></a>
                 </div>
               </div>
-            </div>            
+            </div>
 
             <div class="form-group row" id="divHemorrhage">
               <div class="col-3">
@@ -396,7 +405,7 @@
                   <a></a>
                 </div>
               </div>
-            </div>            
+            </div>
 
             <div class="form-group row">
               <div class="col-3">
@@ -423,10 +432,10 @@
                 <div class="switch-toggle switch-candy switch-block">
                   <input id="duplex-yes" name="Duplex_Carotid" type="radio" value="Yes" checked />
                   <label for="duplex-yes" onclick="">Yes</label>
-            
+
                   <input id="duplex-no" name="Duplex_Carotid" type="radio" value="No" />
                   <label for="duplex-no" onclick="">No</label>
-            
+
                   <a></a>
                 </div>
               </div>
@@ -440,15 +449,15 @@
                 <div class="switch-toggle switch-candy switch-block">
                   <input id="stenosis-yes" name="Stenosis_ICA" type="radio" value="Yes" checked />
                   <label for="stenosis-yes" onclick="">Yes</label>
-            
+
                   <input id="stenosis-no" name="Stenosis_ICA" type="radio" value="No" />
                   <label for="stenosis-no" onclick="">No</label>
-            
+
                   <a></a>
                 </div>
               </div>
             </div>
-            
+
             <div class="form-group row" id="div-carotid-side">
               <div class="col-3">
                 <label>Side of Carotid Stenosis:</label>
@@ -457,16 +466,15 @@
                 <!-- Third input (Right) -->
                 <input id="stenosis-right" name="Carotid_Stenosis_Side" type="radio" value="Right" />
                 <label for="stenosis-right">Right</label>
-            
-            
+
                 <!-- First input (Bilateral) -->
-                <input id="stenosis-bilateral" name="Carotid_Stenosis_Side" type="radio" value="Bilateral" checked="checked"/>
+                <input id="stenosis-bilateral" name="Carotid_Stenosis_Side" type="radio" value="Bilateral" checked="checked" />
                 <label for="stenosis-bilateral">Bilateral</label>
 
                 <!-- Second input (Left) in the middle, checked by default -->
-                <input id="stenosis-left" name="Carotid_Stenosis_Side" type="radio" value="Left"  />
+                <input id="stenosis-left" name="Carotid_Stenosis_Side" type="radio" value="Left" />
                 <label for="stenosis-left">Left</label>
-            
+
                 <a></a>
               </div>
             </div>
@@ -479,15 +487,15 @@
                 <!-- Third input (Right) -->
                 <input id="infarction-right" name="Infarction_Side" type="radio" value="Right" />
                 <label for="infarction-right">Right</label>
-                      
+
                 <!-- First input (Bilateral) -->
-                <input id="infarction-bilateral" name="Infarction_Side" type="radio" value="Bilateral" checked="checked"/>
+                <input id="infarction-bilateral" name="Infarction_Side" type="radio" value="Bilateral" checked="checked" />
                 <label for="infarction-bilateral">Bilateral</label>
 
                 <!-- Second input (Left) in the middle, checked by default -->
-                <input id="infarction-left" name="Infarction_Side" type="radio" value="Left"  />
+                <input id="infarction-left" name="Infarction_Side" type="radio" value="Left" />
                 <label for="infarction-left">Left</label>
-            
+
                 <a></a>
               </div>
             </div>
@@ -502,17 +510,15 @@
                 <label for="hemorrhage-right">Right</label>
 
                 <!-- First input (Bilateral) -->
-                <input id="hemorrhage-bilateral" name="Hemorrhage_Side" type="radio" value="Bilateral" checked="checked"/>
+                <input id="hemorrhage-bilateral" name="Hemorrhage_Side" type="radio" value="Bilateral" checked="checked" />
                 <label for="hemorrhage-bilateral">Bilateral</label>
 
-                            
                 <!-- Second input (Left) in the middle, checked by default -->
-                <input id="hemorrhage-left" name="Hemorrhage_Side" type="radio" value="Left"  />
-                <label for="hemorrhage-left">Left</label>            
+                <input id="hemorrhage-left" name="Hemorrhage_Side" type="radio" value="Left" />
+                <label for="hemorrhage-left">Left</label>
                 <a></a>
               </div>
-            </div>        
-            
+            </div>
           </div>
           <!-- Add other investigation and imaging fields similarly -->
         </form>

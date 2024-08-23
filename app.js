@@ -3,7 +3,12 @@
 // document.getElementById('welcome-page').style.display = 'none';
 // document.getElementById('symptoms-exam-page').style.display = 'none';
 // document.getElementById('investigation-page').style.display = 'block';
+// until here
 
+
+/////////////////////// Demographics and Past Medical History ///////////////////////////////
+
+//Next button
 document.getElementById('demoToSymp').addEventListener('click', function () {
     if (filled(1)) {
         document.getElementById('Demographics-page').style.display = 'none';
@@ -25,10 +30,27 @@ document.getElementById('demoToSymp').addEventListener('click', function () {
     }
 });
 
-// document.getElementById('demoTowelcome').addEventListener('click', function() {
-//     document.getElementById('welcome-page').style.display = 'block';
-//     document.getElementById('Demographics-page').style.display = 'none';
-// });
+// Stroke switch
+document.getElementById('stroke-yes').addEventListener('click', function() {
+    document.getElementById('stroke-date').style.display = 'block';
+    document.getElementById('stroke-date').style.removeProperty("display");
+});
+document.getElementById('stroke-na').addEventListener('click', function() {
+    document.getElementById('stroke-date').style.display = 'none';
+});
+document.getElementById('stroke-no').addEventListener('click', function() {
+    document.getElementById('stroke-date').style.display = 'none';
+});
+
+
+document.getElementById('age').addEventListener('input', function() {
+    if (this.value < 1 || this.value>120) {
+      this.value = '';
+    }
+});
+
+
+//////////////////////////// Symptoms and Exam //////////////////////////////
 
 document.getElementById('sympToInvest').addEventListener('click', function () {
     if (filled(2)) {
@@ -43,6 +65,28 @@ document.getElementById('sympToDemo').addEventListener('click', function() {
     document.getElementById('Demographics-page').style.display = 'block';
     document.getElementById('symptoms-exam-page').style.display = 'none';
 });
+
+
+document.getElementById('Days').addEventListener('input', function() {
+    if (this.value < 0 || this.value > 30) {
+      this.value = '';
+    }
+});
+
+document.getElementById('Hours').addEventListener('input', function() {
+    if (this.value < 0 || this.value > 23) {
+      this.value = '';
+    }
+});
+
+document.getElementById('Minutes').addEventListener('input', function() {
+    if (this.value < 0 || this.value > 59) {
+      this.value = '';
+    }
+});
+
+
+///////////////////////////////// Investigation and Imaging ////////////////////////
 
 document.getElementById('investToSymp').addEventListener('click', function() {
     document.getElementById('symptoms-exam-page').style.display = 'block';
@@ -87,17 +131,7 @@ document.getElementById('cta-yes').addEventListener('click', function() {
     document.getElementById('div-carotid-side').style.removeProperty("display");
 });
 
-// Stroke switch
-document.getElementById('stroke-yes').addEventListener('click', function() {
-    document.getElementById('stroke-date').style.display = 'block';
-    document.getElementById('stroke-date').style.removeProperty("display");
-});
-document.getElementById('stroke-na').addEventListener('click', function() {
-    document.getElementById('stroke-date').style.display = 'none';
-});
-document.getElementById('stroke-no').addEventListener('click', function() {
-    document.getElementById('stroke-date').style.display = 'none';
-});
+
 
 function getInfo(path) {
     const form = document.getElementById(path);
@@ -132,7 +166,7 @@ function filled(formNumber) {
         }
     } else if (formNumber === 2) {
         temp = getInfo("symptoms-exam-form");
-        if (Object.keys(temp).length != 8 || temp["date-time"] == '' || temp['Days'] == '') {
+        if ( temp.Days == '' || temp.Hours == '' || temp.Minutes == '') {
             return false;
         }
     } else if (formNumber === 3) {
@@ -140,18 +174,6 @@ function filled(formNumber) {
     }
     return true
 }
-  
-document.getElementById('age').addEventListener('input', function() {
-    if (this.value < 1 || this.value>120) {
-      this.value = '';
-    }
-});
-  
-document.getElementById('Days').addEventListener('input', function() {
-    if (this.value < 1 || this.value > 30) {
-      this.value = '';
-    }
-});
 
 document.getElementById('finish-button').addEventListener('click', function () {
 
