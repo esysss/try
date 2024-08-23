@@ -345,10 +345,10 @@
 
               <div class="col-4">
                 <div class="switch-toggle switch-candy switch-block">
-                  <input id="cta-yes" name="CTA" type="radio" value="Yes" checked />
+                  <input id="cta-yes" name="CTA" type="radio" value="Yes" />
                   <label for="cta-yes" onclick="">Yes</label>
 
-                  <input id="cta-no" name="CTA" type="radio" value="No" />
+                  <input id="cta-no" name="CTA" type="radio" value="No" checked />
                   <label for="cta-no" onclick="">No</label>
 
                   <a></a>
@@ -362,10 +362,10 @@
               </div>
               <div class="col-4">
                 <div class="switch-toggle switch-candy switch-block">
-                  <input id="ct-head-yes" name="CT" type="radio" value="Yes" checked />
+                  <input id="ct-head-yes" name="CT" type="radio" value="Yes" />
                   <label for="ct-head-yes" onclick="">Yes</label>
 
-                  <input id="ct-head-no" name="CT" type="radio" value="No" />
+                  <input id="ct-head-no" name="CT" type="radio" value="No" checked />
                   <label for="ct-head-no" onclick="">No</label>
 
                   <a></a>
@@ -373,16 +373,16 @@
               </div>
             </div>
 
-            <div class="form-group row" id="divInfraction">
+            <div class="form-group row" id="divInfraction" style="display: none">
               <div class="col-3">
                 <label for="Infraction">Infraction:</label>
               </div>
               <div class="col-4">
                 <div class="switch-toggle switch-candy switch-block">
-                  <input id="infraction-yes" name="Infraction" type="radio" value="Yes" checked />
+                  <input id="infraction-yes" name="Infraction" type="radio" value="Yes" />
                   <label for="infraction-yes" onclick="">Yes</label>
 
-                  <input id="infraction-no" name="Infraction" type="radio" value="No" />
+                  <input id="infraction-no" name="Infraction" type="radio" value="No" checked />
                   <label for="infraction-no" onclick="">No</label>
 
                   <a></a>
@@ -390,16 +390,16 @@
               </div>
             </div>
 
-            <div class="form-group row" id="divHemorrhage">
+            <div class="form-group row" id="divHemorrhage" style="display: none">
               <div class="col-3">
                 <label for="Hemorrhage">Hemorrhage:</label>
               </div>
               <div class="col-4">
                 <div class="switch-toggle switch-candy switch-block">
-                  <input id="hemorrhage-yes" name="Hemorrhage" type="radio" value="Yes" checked />
+                  <input id="hemorrhage-yes" name="Hemorrhage" type="radio" value="Yes" />
                   <label for="hemorrhage-yes" onclick="">Yes</label>
 
-                  <input id="hemorrhage-no" name="Hemorrhage" type="radio" value="No" />
+                  <input id="hemorrhage-no" name="Hemorrhage" type="radio" value="No" checked />
                   <label for="hemorrhage-no" onclick="">No</label>
 
                   <a></a>
@@ -413,10 +413,10 @@
               </div>
               <div class="col-4">
                 <div class="switch-toggle switch-candy switch-block">
-                  <input id="ecg-yes" name="ECG" type="radio" value="Yes" checked />
+                  <input id="ecg-yes" name="ECG" type="radio" value="Yes" />
                   <label for="ecg-yes" onclick="">Yes</label>
 
-                  <input id="ecg-no" name="ECG" type="radio" value="No" />
+                  <input id="ecg-no" name="ECG" type="radio" value="No" checked />
                   <label for="ecg-no" onclick="">No</label>
 
                   <a></a>
@@ -430,10 +430,10 @@
               </div>
               <div class="col-4">
                 <div class="switch-toggle switch-candy switch-block">
-                  <input id="duplex-yes" name="Duplex_Carotid" type="radio" value="Yes" checked />
+                  <input id="duplex-yes" name="Duplex_Carotid" type="radio" value="Yes" />
                   <label for="duplex-yes" onclick="">Yes</label>
 
-                  <input id="duplex-no" name="Duplex_Carotid" type="radio" value="No" />
+                  <input id="duplex-no" name="Duplex_Carotid" type="radio" value="No" checked />
                   <label for="duplex-no" onclick="">No</label>
 
                   <a></a>
@@ -447,10 +447,10 @@
               </div>
               <div class="col-4">
                 <div class="switch-toggle switch-candy switch-block">
-                  <input id="stenosis-yes" name="Stenosis_ICA" type="radio" value="Yes" checked />
+                  <input id="stenosis-yes" name="Stenosis_ICA" type="radio" value="Yes" />
                   <label for="stenosis-yes" onclick="">Yes</label>
 
-                  <input id="stenosis-no" name="Stenosis_ICA" type="radio" value="No" />
+                  <input id="stenosis-no" name="Stenosis_ICA" type="radio" value="No" checked />
                   <label for="stenosis-no" onclick="">No</label>
 
                   <a></a>
@@ -458,7 +458,7 @@
               </div>
             </div>
 
-            <div class="form-group row" id="div-carotid-side">
+            <div class="form-group row" id="div-carotid-side" style="display: none">
               <div class="col-3">
                 <label>Side of Carotid Stenosis:</label>
               </div>
@@ -479,7 +479,7 @@
               </div>
             </div>
 
-            <div class="form-group row" id="div-infraction-side">
+            <div class="form-group row" id="div-infraction-side" style="display: none">
               <div class="col-3">
                 <label>Side of Infarction:</label>
               </div>
@@ -500,7 +500,7 @@
               </div>
             </div>
 
-            <div class="form-group row" id="div-hemmorrhage-side">
+            <div class="form-group row" id="div-hemmorrhage-side" style="display: none">
               <div class="col-3">
                 <label>Side of Hemorrhage:</label>
               </div>
@@ -529,6 +529,7 @@
       <div id="summary-page" style="display: none">
         <h2>Summary</h2>
         <div id="summary-content"></div>
+        <div id="explanation"></div>
       </div>
     </div>
     <!-- Bootstrap JS and dependencies -->
